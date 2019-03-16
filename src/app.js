@@ -11,6 +11,7 @@ import {
 import api from "./api/feed.json";
 
 import { Post } from "./ui/components/post.component";
+import { IgIcon } from './components/IgIcon/ig-icon.component'
 
 class App extends Component {
   render() {
@@ -42,10 +43,11 @@ class App extends Component {
           borderColor: "#ddd"
         }}
       >
-        <Image
+        {/* <Image
           source={require("./img/camera.png")}
           style={{ width: 23, height: 23 }}
-        />
+        /> */}
+        <IgIcon name='photo-camera' style={{ fontSize: 40, color: 'red' }} />
         <Image
           source={require("./img/instagram_logo.png")}
           style={{ width: 100, height: 40, resizeMode: "contain" }}
