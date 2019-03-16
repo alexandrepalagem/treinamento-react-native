@@ -10,7 +10,7 @@ import {
 
 import api from "./api/feed.json";
 
-import { Post } from "./components/post.component";
+import { Post } from "./ui/components/post.component";
 
 class App extends Component {
   render() {

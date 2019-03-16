@@ -21,7 +21,7 @@ export class Post extends PureComponent {
             ) : null}
           </View>
           <Image
-            source={require("../img/dots.png")}
+            source={require("../../img/dots.png")}
             style={{ width: 15, height: 15, margin: 10 }}
           />
         </View>
@@ -34,12 +34,12 @@ export class Post extends PureComponent {
         >
           {post.liked ? (
             <Image
-              source={require("../img/like-full.png")}
+              source={require("../../img/like-full.png")}
               style={{ width: 20, height: 20, marginRight: 10 }}
             />
           ) : (
             <Image
-              source={require("../img/like.png")}
+              source={require("../../img/like.png")}
               style={{ width: 20, height: 20, marginRight: 10 }}
             />
           )}
