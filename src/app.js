@@ -10,8 +10,8 @@ import {
 
 import api from "./api/feed.json";
 
-import { Post } from "./ui/components/post.component";
-import { IgIcon } from './components/IgIcon/ig-icon.component'
+import { Post } from "./ui/components/post.component"
+import { IgIcon } from './ui/components/ig-icon/ig-icon.component'
 
 class App extends Component {
   render() {

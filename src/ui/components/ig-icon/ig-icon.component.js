@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons'
-import icoMoonConfig from '../../../../assets/fonts/selection.json'
+import icoMoonConfig from '../../../assets/font/selection.json'
 
-// const Icon = createIconSetFromIcoMoon(icoMoonConfig, 'InstaIcons', 'instaIcons.ttf')
+const Icon = createIconSetFromIcoMoon(icoMoonConfig, 'MyIcons', 'MyIcons.ttf')
 
 export class IgIcon extends Component {
   render() {
     const { name, style } = this.props
-
-    return null
 
     return (
       <Icon name={name} style={style} {...this.props} />
