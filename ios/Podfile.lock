@@ -8,6 +8,14 @@ PODS:
   - glog (0.3.5)
   - React (0.58.6):
     - React/Core (= 0.58.6)
+  - react-native-camera (2.0.2):
+    - React
+    - react-native-camera/RCT (= 2.0.2)
+    - react-native-camera/RN (= 2.0.2)
+  - react-native-camera/RCT (2.0.2):
+    - React
+  - react-native-camera/RN (2.0.2):
+    - React
   - React/Core (0.58.6):
     - yoga (= 0.58.6.React)
   - React/CxxBridge (0.58.6):
@@ -55,9 +63,11 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - ReactNativePermissions (1.1.1):
+    - React
   - RNGestureHandler (1.1.0):
     - React
-  - RNVectorIcons (6.4.1):
+  - RNVectorIcons (6.4.2):
     - React
   - yoga (0.58.6.React)
 
@@ -65,6 +75,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - react-native-camera (from `../node_modules/react-native-camera`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
@@ -79,6 +90,7 @@ DEPENDENCIES:
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTVibration (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
+  - ReactNativePermissions (from `../node_modules/react-native-permissions`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -96,6 +108,10 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
     :path: "../node_modules/react-native"
+  react-native-camera:
+    :path: "../node_modules/react-native-camera"
+  ReactNativePermissions:
+    :path: "../node_modules/react-native-permissions"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNVectorIcons:
@@ -109,10 +125,12 @@ SPEC CHECKSUMS:
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
   React: 130b87b2d5e2baac646954282cab87be986d98fc
+  react-native-camera: 685c6401bb0746a4f9dd042bd9bbacdf9dcf1ad5
+  ReactNativePermissions: 2e324bb3baf12702e3ec27f76c8ae1158fa69fc6
   RNGestureHandler: b65d391f4f570178d657b99a16ec99d09b8656b0
-  RNVectorIcons: 09d03dfe7c9fc158c3dce50d891101637d428bb3
+  RNVectorIcons: 6607bd3a30291d0edb56f9bbe7ae411ee2b928b0
   yoga: 32d7ef1081951e9a35a4c72a7be797598b138a48
 
-PODFILE CHECKSUM: 3f1e8d16c94449e76629a1b3aa7d3c27a5a428fd
+PODFILE CHECKSUM: 5b61ed6caf857fe9a47a60d24423ca403ec97e19
 
 COCOAPODS: 1.6.1

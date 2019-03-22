@@ -40,6 +40,14 @@ target 'go' do
   # React Native Vector Icons
   # https://github.com/oblador/react-native-vector-icons
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  
+  # React Native Camera
+  # https://github.com/react-native-community/react-native-camera
+  pod 'react-native-camera', path: '../node_modules/react-native-camera'
+  
+  # React Native Permissions
+  # https://github.com/yonahforst/react-native-permissions
+  pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
 end
 
 post_install do |installer|
