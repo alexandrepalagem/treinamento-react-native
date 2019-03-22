@@ -36,6 +36,10 @@ target 'go' do
   # React Native Gesture Handler
   # https://github.com/kmagiera/react-native-gesture-handler
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+  
+  # React Native Vector Icons
+  # https://github.com/oblador/react-native-vector-icons
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 end
 
 post_install do |installer|

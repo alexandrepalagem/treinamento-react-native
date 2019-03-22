@@ -3,6 +3,8 @@ import { View, Text, Image, Dimensions } from "react-native";
 
 const { width } = Dimensions.get('window')
 
+import { IgIcon } from '@ui/components/ig-icon/ig-icon.component'
+
 export class Post extends PureComponent {
   render() {
     const { post } = this.props;
