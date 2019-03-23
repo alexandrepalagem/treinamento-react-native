@@ -1,17 +1,19 @@
-import React, { Component } from 'react'
-import { View, Text, Image, SafeAreaView,  ScrollView, TouchableOpacity } from 'react-native'
+import React, { Fragment } from 'react'
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native'
 
-import api from '../../../api/direct.json'
+import api from '@api/direct.json'
 
 import { styles } from './direct.style'
 
-const backIcon = require('../../../img/back.png')
-const addIcon = require('../../../img/add.png')
-const searchIcon = require('../../../img/search.png')
-const cameraIcon = require('../../../img/camera.png')
-const cameraIcon2 = require('../../../img/camera2.png')
+const backIcon = require('@img/back.png')
+const addIcon = require('@img/add.png')
+const searchIcon = require('@img/search.png')
+const cameraIcon = require('@img/camera.png')
+const cameraIcon2 = require('@img/camera2.png')
 
-export class DirectScreen extends Component {
+import { BaseScreen } from '@ui/screens/base'
+
+export class DirectScreen extends BaseScreen {
   _renderNavBar() {
     return (
       <View
@@ -77,15 +79,15 @@ export class DirectScreen extends Component {
     return api.contacts.map(contact => this._renderContact(contact))
   }
 
-  render() {
+  renderContent() {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+      <Fragment>
         {this._renderSearch()}
         <ScrollView>
           {this._renderContacts()}
         </ScrollView>
         {this._renderCameraButton()}
-      </SafeAreaView>
+      </Fragment>
     )
   }
 }
