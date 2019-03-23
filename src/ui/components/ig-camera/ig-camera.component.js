@@ -30,10 +30,6 @@ export class IgCamera extends Component {
     this._requestPermissions()
   }
 
-  componentDidUpdate() {
-    this._checkPermissions()
-  }
-
   _requestPermissions() {
     this._requestCameraPermission().then(this._requestMicrophonePermission)
   }
