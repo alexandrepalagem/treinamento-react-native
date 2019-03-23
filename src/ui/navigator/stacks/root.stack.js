@@ -1,6 +1,7 @@
 import { createStackNavigator } from 'react-navigation'
 
 import { RootTabBar } from '@ui/navigator/tabbar'
+import { CameraStack } from '@ui/navigator/stacks/camera'
 
 export const RootStack = createStackNavigator(
   {
@@ -10,12 +11,13 @@ export const RootStack = createStackNavigator(
         header: null
       }
     },
-  }
-)
-
-/*DirectStack: {
-      screen: DirectStack,
+    CameraStack: {
+      screen: CameraStack,
       navigationOptions: {
         header: null
       }
-    }*/
+    }
+  }
+)
+
+
