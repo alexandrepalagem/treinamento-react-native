@@ -11,14 +11,14 @@ const searchIcon = require('../../../img/search.png')
 const cameraIcon = require('../../../img/camera.png')
 const cameraIcon2 = require('../../../img/camera2.png')
 
-export class Direct extends Component {
+export class DirectScreen extends Component {
   _renderNavBar() {
     return (
       <View
         style={styles.navbarContainer}
-      > 
-        <Image 
-          source={backIcon} 
+      >
+        <Image
+          source={backIcon}
           resizeMode='contain'
           style={styles.icon}
         />
@@ -27,8 +27,8 @@ export class Direct extends Component {
             Direct
           </Text>
         </View>
-        <Image 
-          source={addIcon} 
+        <Image
+          source={addIcon}
           resizeMode='contain'
           style={styles.icon}
         />
@@ -50,13 +50,13 @@ export class Direct extends Component {
   _renderContact(contact) {
     return (
       <View style={styles.contactContainer} key={contact.id}>
-        <Image 
-          source={{ uri: contact.photo }} 
-          style={styles.contactPhoto} 
+        <Image
+          source={{ uri: contact.photo }}
+          style={styles.contactPhoto}
         />
         <View style={{ marginLeft: 10, flex: 1 }}>
           <Text>{contact.user}</Text>
-        </View> 
+        </View>
         <Image source={cameraIcon} style={styles.icon} />
       </View>
     )
@@ -64,7 +64,7 @@ export class Direct extends Component {
 
   _renderCameraButton() {
     return (
-      <TouchableOpacity style={styles.cameraButton}>
+      <TouchableOpacity activeOpacity={0.8} style={styles.cameraButton}>
         <Image source={cameraIcon2} style={styles.cameraButtonIcon} />
         <Text style={styles.cameraButtonText}>
           Camera
@@ -80,7 +80,6 @@ export class Direct extends Component {
   render() {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
-        {this._renderNavBar()}
         {this._renderSearch()}
         <ScrollView>
           {this._renderContacts()}

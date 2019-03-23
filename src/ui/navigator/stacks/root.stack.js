@@ -1,6 +1,7 @@
 import { createStackNavigator } from 'react-navigation'
 
 import { RootTabBar } from '@ui/navigator/tabbar'
+import { DirectStack } from '@ui/navigator/stacks/direct'
 
 export const RootStack = createStackNavigator(
   {
@@ -10,12 +11,11 @@ export const RootStack = createStackNavigator(
         header: null
       }
     },
-  }
-)
-
-/*DirectStack: {
+    DirectStack: {
       screen: DirectStack,
       navigationOptions: {
         header: null
       }
-    }*/
+    },
+  }
+)
