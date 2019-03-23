@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, StatusBar } from "react-native";
 
 import { BaseScreen } from '@ui/screens/base'
 
@@ -16,5 +16,9 @@ export class FeedScreen extends BaseScreen {
         ))}
       </ScrollView>
     )
+  }
+
+  screenWillFocus() {
+    StatusBar.setTranslucent(true)
   }
 }

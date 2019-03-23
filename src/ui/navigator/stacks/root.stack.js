@@ -17,5 +17,8 @@ export const RootStack = createStackNavigator(
         header: null
       }
     },
+  },
+  {
+    mode: 'modal'
   }
 )

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native'
+import { View, Text, Image, ScrollView, TouchableOpacity, StatusBar } from 'react-native'
+import { HeaderBackButton, NavigationActions, StackActions } from 'react-navigation'
 
 import api from '@api/direct.json'
 
@@ -14,28 +15,39 @@ const cameraIcon2 = require('@img/camera2.png')
 import { BaseScreen } from '@ui/screens/base'
 
 export class DirectScreen extends BaseScreen {
-  _renderNavBar() {
-    return (
-      <View
-        style={styles.navbarContainer}
-      >
-        <Image
-          source={backIcon}
-          resizeMode='contain'
-          style={styles.icon}
-        />
-        <View style={{ flex: 1 }}>
-          <Text style={styles.navbarTitle}>
-            Direct
-          </Text>
-        </View>
-        <Image
-          source={addIcon}
-          resizeMode='contain'
-          style={styles.icon}
-        />
-      </View>
-    )
+
+  static navigationOptions = ({ navigation }) => {
+    const title = navigation.getParam('title')
+    
+    return {
+      title: title,
+      headerLeft: <HeaderBackButton onPress={navigation.getParam('_onDismiss')} />
+    }
+  }
+
+  constructor(props) {
+    super(props)
+
+    this._onDismiss = this._onDismiss.bind(this)
+  }
+
+  _onDismiss() {
+    // this.props.navigation.pop()
+
+    const backAction = NavigationActions.back()
+    this.props.navigation.dispatch(backAction)
+  }
+
+  componentDidMount() {
+    super.componentDidMount()
+
+    this.props.navigation.setParams({
+      _onDismiss: this._onDismiss
+    })
+  }
+
+  screenWillFocus() {
+    StatusBar.setTranslucent(false)
   }
 
   _renderSearch() {
