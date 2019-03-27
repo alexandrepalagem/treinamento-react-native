@@ -100,7 +100,7 @@ export class FeedScreen extends BaseScreen {
     )
   }
 
-  _renderLocation() {
+  _renderLocationSession() {
     return (
       <View style={{ padding: 20 }}>
         <TouchableOpacity onPress={() => this._getLocation()} style={styles.locationButton}>
@@ -119,7 +119,7 @@ export class FeedScreen extends BaseScreen {
       <ScrollView keyboardShouldPersistTaps={'handled'}>
         <View>
           {this._renderStorageSession()}
-          {this._renderLocation()}
+          {/* {this._renderLocationSession()} */}
 
           {api.feed.map((post, index) => (
             <Post post={post} key={index} />
