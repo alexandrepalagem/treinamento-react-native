@@ -25,11 +25,17 @@ export class FeedScreen extends BaseScreen {
     this.state = {
       text: '',
       colors: [],
+      latitude: '',
+      longitude: '',
     }
   }
 
   componentDidMount() {
-    StorageService.getObject('colors').then(colors => this.setState({ colors }))
+    StorageService.getObject('colors').then(colors => {
+      if(colors) {
+        this.setState({ colors })
+      }
+    })
   }
 
   _addColorToArray() {
@@ -82,11 +88,38 @@ export class FeedScreen extends BaseScreen {
     )
   }
 
+  _getLocation() {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        this.setState({ latitude: position.coords.latitude, longitude: position.coords.longitude})
+      },
+      error => {
+        console.log(error.code, error.message)
+      },
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 },
+    )
+  }
+
+  _renderLocation() {
+    return (
+      <View style={{ padding: 20 }}>
+        <TouchableOpacity onPress={() => this._getLocation()} style={styles.locationButton}>
+          <Text style={styles.locationButtonText}>Minha localização</Text>
+        </TouchableOpacity>
+
+        <View style={{paddingVertical: 20}}>
+          <Text>{`${this.state.latitude} ${this.state.longitude}`}</Text>
+        </View>
+      </View>
+    )
+  }
+
   renderContent() {
     return (
       <ScrollView keyboardShouldPersistTaps={'handled'}>
         <View>
           {this._renderStorageSession()}
+          {this._renderLocation()}
 
           {api.feed.map((post, index) => (
             <Post post={post} key={index} />
@@ -158,5 +191,16 @@ const styles = StyleSheet.create({
   },
   colorButtonText: {
     color: '#fff',
+  },
+  locationButton: {
+    height: 40,
+    backgroundColor: '#ffca28',
+    paddingHorizontal: 15,
+    justifyContent: 'center',
+    borderRadius: 6,
+  },
+  locationButtonText: {
+    fontSize: 16,
+    textAlign: 'center',
   },
 })
