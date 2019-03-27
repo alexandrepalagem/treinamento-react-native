@@ -52,7 +52,7 @@ export class FeedScreen extends BaseScreen {
     })
   }
 
-  _renderStorageSession() {
+  _renderStorageSection() {
     return (
       <View style={styles.storageContainer}>
         <View>
@@ -100,7 +100,7 @@ export class FeedScreen extends BaseScreen {
     )
   }
 
-  _renderLocationSession() {
+  _renderLocationSection() {
     return (
       <View style={{ padding: 20 }}>
         <TouchableOpacity onPress={() => this._getLocation()} style={styles.locationButton}>
@@ -118,8 +118,8 @@ export class FeedScreen extends BaseScreen {
     return (
       <ScrollView keyboardShouldPersistTaps={'handled'}>
         <View>
-          {this._renderStorageSession()}
-          {/* {this._renderLocationSession()} */}
+          {this._renderStorageSection()}
+          {/* {this._renderLocationSection()} */}
 
           {api.feed.map((post, index) => (
             <Post post={post} key={index} />
