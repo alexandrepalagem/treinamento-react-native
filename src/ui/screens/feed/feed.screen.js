@@ -12,8 +12,7 @@ import {
 
 import { BaseScreen } from '@ui/screens/base'
 
-import { StorageService } from '@ui/services'
-
+import { StorageService, DogService } from '@ui/services' 
 import api from '@api/feed.json'
 
 import { Post } from '@ui/components/post.component'
@@ -28,14 +27,21 @@ export class FeedScreen extends BaseScreen {
       latitude: '',
       longitude: '',
     }
+
+    this.dogService = new DogService()
   }
 
   componentDidMount() {
+    super.componentDidMount()
     StorageService.getObject('colors').then(colors => {
       if(colors) {
         this.setState({ colors })
       }
     })
+  }
+
+  screenDidFocus(event) {
+    this.dogService.getRandomImage().then(dog => alert(JSON.stringify(dog)))
   }
 
   _addColorToArray() {
